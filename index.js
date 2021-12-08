@@ -1,18 +1,51 @@
-function isOdd(num)
-{
-    return num %2 != 0;
+
+const https = require('https');
+const axios = require('axios')
+
+function isOdd(num) {
+    return num % 2 != 0;
 }
 
 
-function createEntity(EntityName, payload)
-{
+const configData = {
+    baseUrl: 'https://edu.staging.nsdl.co.in/registry'
+}
+
+const apiConfig = {
+    "employer": "/Employer",
+    "skillHub": "/SkillHub",
+    "trainer": "/Trainer"
+}
+
+
+function post(requestParam) {
+    requestParam.url = configData.baseUrl + requestParam.url;
+
+    return new Promise((resolve, reject) => {
+        axios.post(requestParam.url, requestParam.data)
+            .then((res) => {
+                console.log('Body: ', res.data[0]);
+                res.data;
+            }).catch((err) => {
+                console.error(err);
+                res.data;
+            });
+    });
+
+
+};
+
+
+function createEntity(EntityName, payload) {
+
     const requestParam = {
-        url = apiConfig[EntityName],
-        data = payload
+        url: '/api/v1' + apiConfig[EntityName] + '/search',
+        data: payload
     }
 
-    return requestParam;
-   // return post(requestParam);                               
+    return post(requestParam);
 }
 
-module.exports = { isOdd, createEntity};
+createEntity('employer', { "filters": {} });
+
+module.exports = { isOdd, createEntity, post };

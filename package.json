@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/Pratikshakhandagale/nodejssdk/issues"
   },
-  "homepage": "https://github.com/Pratikshakhandagale/nodejssdk#readme"
+  "homepage": "https://github.com/Pratikshakhandagale/nodejssdk#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "index": "^0.4.0",
+    "index.js": "0.0.3"
+  }
 }
