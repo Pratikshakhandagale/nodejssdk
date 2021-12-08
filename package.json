@@ -1,6 +1,6 @@
 {
   "name": "@ngtek/nodejssdk",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Node.js sdk",
   "main": "index.js",
   "scripts": {
