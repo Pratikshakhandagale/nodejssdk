@@ -24,11 +24,11 @@ function post(requestParam) {
     return new Promise((resolve, reject) => {
         axios.post(requestParam.url, requestParam.data)
             .then((res) => {
-                console.log('Body: ', res.data[0]);
-                res;
+                console.log('Body: ', res.data);
+                res.data;
             }).catch((err) => {
                 console.error(err);
-                res;
+                res.data;
             });
     });
 
