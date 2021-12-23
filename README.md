@@ -10,12 +10,12 @@ package **published** successfully. You can check here - https://www.npmjs.com/p
 
 How to run - **node index.js**
 
-How to us in Angular Project :
+How to use sdk in **Angular Project** :
 
-1. Install SDK in you project.
+1. Install **SDK** in your angular project.
 <pre> npm i @ngtek/nodejssdk </pre>
 
-2. Import library in your **app.component.ts** file
+2. Import library in **app.component.ts** file
 <pre> import * as nodejssdk from  '@ngtek/nodejssdk';
 </pre>
 
