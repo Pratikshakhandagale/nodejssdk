@@ -16,9 +16,9 @@ How to us in Angular Project :
 <pre> npm i @ngtek/nodejssdk </pre>
 
 2. Import library in your **app.component.ts** file
-<pre> import * as **nodejssdk** from  '@ngtek/nodejssdk';
+<pre> import * as nodejssdk from  '@ngtek/nodejssdk';
 </pre>
 
 3. Now, you can access any function of library
-<pre>     **nodejssdk**.isOdd(2);
+<pre>   nodejssdk.isOdd(2);
 </pre>
