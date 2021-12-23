@@ -25,10 +25,10 @@ function post(requestParam) {
         axios.post(requestParam.url, requestParam.data)
             .then((res) => {
                 console.log('Body: ', res.data[0]);
-                res.data;
+                res;
             }).catch((err) => {
                 console.error(err);
-                res.data;
+                res;
             });
     });
 
