@@ -4,8 +4,8 @@ var qs = require('qs');
 
 
 const configData = {
-    baseUrl: 'https://xxx',
-    token: 'eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJERHZkYUtTRlhvc0pGaG9aVXQ2RXp2anJsS1A0UFYzcTdzMWs4ZEg2eVJFIn0.eyJleHAiOjE2NDA3MDA3MzEsImlhdCI6MTY0MDY5MzUzMSwianRpIjoiNjQwZTA1NmMtZjIxOC00MmUyLWFiMWQtYmQ0ZTgyZmRlM2ZiIiwiaXNzIjoiaHR0cHM6Ly9lZHUuc3RhZ2luZy5uc2RsLmNvLmluL2F1dGgvcmVhbG1zL3N1bmJpcmQtcmMiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMjJiZjUyYmMtZGU0Ny00NmZjLWFkNTEtM2VhNTAyMjMxY2JjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoicmVnaXN0cnktZnJvbnRlbmQiLCJzZXNzaW9uX3N0YXRlIjoiM2M3NzcwMzgtOWNiZC00MmRlLWE2MGEtNzcyMDUzZDQwZjc0IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwczovL2VkdS5zdGFnaW5nLm5zZGwuY28uaW4iXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1zdW5iaXJkLXJjIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImphdGluX25AYXBvbGxvbWVkc2tpbGxzLmNvbSIsImVtYWlsIjoiamF0aW5fbkBhcG9sbG9tZWRza2lsbHMuY29tIn0.oMu2WNfqgnwthUJMZX5pX71St8RlAz-RiSrWIvLpgVQTX59ApFQrcxe1i0NyL1R0W0wPcSOdRzBEhyt1A0c3Z7kClJ-5bNHCaEPb1qzSoMkUKbVFAj8OB_a8B7sL1eZjQ3voGSgA-zw5lvWNXIm4G3TS-a4hqhwhee4SLLdfE8S7iZD4JC8BS9EmUYTWWcjc-jyEj1ZCHQ2HLVmYogdtox8B6rY_3X93rHSqMCXzVHuiA3hfyKoQkCRE8JNzy-Dkqs3PsnN6NDKgA0adTzijcoTI6FRtHJsOzboz_5OiYhe1MH9vI3kTuldxCVnGtsGdzHXAzuyYOfce0BlyUEOJrA'
+    baseUrl: '',
+    //token: 'eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJERHZkYUtTRlhvc0pGaG9aVXQ2RXp2anJsS1A0UFYzcTdzMWs4ZEg2eVJFIn0.eyJleHAiOjE2NDA3MDA3MzEsImlhdCI6MTY0MDY5MzUzMSwianRpIjoiNjQwZTA1NmMtZjIxOC00MmUyLWFiMWQtYmQ0ZTgyZmRlM2ZiIiwiaXNzIjoiaHR0cHM6Ly9lZHUuc3RhZ2luZy5uc2RsLmNvLmluL2F1dGgvcmVhbG1zL3N1bmJpcmQtcmMiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMjJiZjUyYmMtZGU0Ny00NmZjLWFkNTEtM2VhNTAyMjMxY2JjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoicmVnaXN0cnktZnJvbnRlbmQiLCJzZXNzaW9uX3N0YXRlIjoiM2M3NzcwMzgtOWNiZC00MmRlLWE2MGEtNzcyMDUzZDQwZjc0IiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyJodHRwczovL2VkdS5zdGFnaW5nLm5zZGwuY28uaW4iXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1zdW5iaXJkLXJjIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByZWZlcnJlZF91c2VybmFtZSI6ImphdGluX25AYXBvbGxvbWVkc2tpbGxzLmNvbSIsImVtYWlsIjoiamF0aW5fbkBhcG9sbG9tZWRza2lsbHMuY29tIn0.oMu2WNfqgnwthUJMZX5pX71St8RlAz-RiSrWIvLpgVQTX59ApFQrcxe1i0NyL1R0W0wPcSOdRzBEhyt1A0c3Z7kClJ-5bNHCaEPb1qzSoMkUKbVFAj8OB_a8B7sL1eZjQ3voGSgA-zw5lvWNXIm4G3TS-a4hqhwhee4SLLdfE8S7iZD4JC8BS9EmUYTWWcjc-jyEj1ZCHQ2HLVmYogdtox8B6rY_3X93rHSqMCXzVHuiA3hfyKoQkCRE8JNzy-Dkqs3PsnN6NDKgA0adTzijcoTI6FRtHJsOzboz_5OiYhe1MH9vI3kTuldxCVnGtsGdzHXAzuyYOfce0BlyUEOJrA'
 }
 
 const apiConfig = {
@@ -18,13 +18,19 @@ const apiConfig = {
     "proofOfEducation": "/ProofOfEducation",
     "proofOfSkill": "/ProofOfSkill",
     "proofOfWork": "/ProofOfWork",
-    "proofOfReputation": "/ProofOfReputation"
+    "proofOfReputation": "/ProofOfReputation",
+    "student": "/Student"
 }
 
 
 function post(requestParam) {
     requestParam.url = configData.baseUrl + requestParam.url;
 
+    if (configData['token']) {
+        axios.defaults.headers.common['Authorization'] = configData['token'];
+    }
+
+    console.log(configData['token']);
     return new Promise((resolve, reject) => {
         axios.post(requestParam.url, requestParam.data)
             .then((res) => {
@@ -51,10 +57,14 @@ function get(requestParam) {
 };
 
 
+/**
+ * 
+ * @returns This method allows a user to login
+ */
 function Login() {
 
     const requestParam = {
-        url: 'https://xxx',
+        url: '/auth/realms/sunbird-rc/protocol/openid-connect/token',
         data: qs.stringify({
             'client_id': 'registry-frontend',
             'username': 'jatin_n@apollomedskills.com',
@@ -67,7 +77,6 @@ function Login() {
         'Content-Type': 'application/x-www-form-urlencoded'
     }
 
-    console.log(requestParam.data);
 
     return new Promise((resolve, reject) => {
         axios.post(requestParam.url, requestParam.data, {
@@ -75,6 +84,8 @@ function Login() {
         })
             .then((res) => {
                 resolve(res.data);
+                console.log(res.data);
+
             }).catch((err) => {
                 reject(err.response.data);
 
@@ -84,7 +95,12 @@ function Login() {
 }
 
 
-
+/**
+ * Search 
+ * @param {*} schemaName 
+ * @param {*} payload 
+ * @returns 
+ */
 function searchEntity(schemaName, payload) {
 
     const requestParam = {
@@ -105,7 +121,13 @@ function searchCredentials(schemaName, payload) {
     return post(requestParam);
 }
 
-
+/**
+ * Create new Entity
+ * 
+ * @param {*} schemaName 
+ * @param {*} payload 
+ * @returns 
+ */
 function createEntity(schemaName, payload) {
 
     const requestParam = {
@@ -118,6 +140,12 @@ function createEntity(schemaName, payload) {
     return post(requestParam);
 }
 
+/**
+ * Fetch entity data by the given osid
+ * @param {*} schemaName 
+ * @param {*} id 
+ * @returns 
+ */
 function readEntity(schemaName, id) {
 
     const requestParam = {
@@ -136,7 +164,14 @@ function readCredential(schemaName, id) {
     return get(requestParam);
 }
 
-function generateCredential(schemaName, id) {
+/**
+ * This function is used for Generate VC
+ * 
+ * @param {*} schemaName 
+ * @param {*} id 
+ * @returns 
+ */
+function generateVC(schemaName, id) {
 
     const headers = {
         'Accept': 'application/vc+ld+json',
@@ -149,6 +184,11 @@ function generateCredential(schemaName, id) {
     return get(requestParam);
 }
 
+/**
+ * This method verify a VC JSON that was issued by the same credential platform ot not
+ * @param {*} payload 
+ * @returns 
+ */
 function verifyCredential(payload) {
 
     const requestParam = {
@@ -161,7 +201,12 @@ function verifyCredential(payload) {
     return post(requestParam);
 }
 
-
+/**
+ * This fetches the schema by the given name
+ * 
+ * @param {*} schemaName 
+ * @returns 
+ */
 function viewSchema(schemaName) {
 
     const requestParam = {
@@ -172,6 +217,13 @@ function viewSchema(schemaName) {
 }
 
 
+/**
+ * This method allows an authenticated issuer to issue a credential
+ * 
+ * @param {*} schemaName 
+ * @param {*} payload 
+ * @returns 
+ */
 function issueCredential(schemaName, payload) {
 
     const requestParam = {
@@ -181,5 +233,6 @@ function issueCredential(schemaName, payload) {
     return post(requestParam);
 }
 
+console.log({ configData });
 
-module.exports = { issueCredential, viewSchema, searchEntity, searchCredentials, Login, readEntity, createEntity, readCredential, verifyCredential, generateCredential, get, post };
+module.exports = { configData, issueCredential, viewSchema, searchEntity, searchCredentials, Login, readEntity, createEntity, readCredential, verifyCredential, generateVC, get, post };
